@@ -1,0 +1,91 @@
+{
+  "name": "@vetwo/whichenv",
+  "version": "1.0.0",
+  "description": "The most advanced JavaScript & TypeScript Project Intelligence Engine. Detects frameworks, runtimes, build tools, and every aspect of any JS/TS project.",
+  "keywords": [
+    "detect",
+    "framework",
+    "runtime",
+    "typescript",
+    "javascript",
+    "project",
+    "environment",
+    "monorepo",
+    "workspace",
+    "intelligence",
+    "analysis",
+    "diagnostics",
+    "cli",
+    "dev-tools"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "VeTwo.dev"
+  },
+  "homepage": "https://github.com/VeTwo-dev/whichenv#readme",
+  "bugs": {
+    "url": "https://github.com/VeTwo-dev/whichenv/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeTwo-dev/whichenv.git"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./cli": {
+      "types": "./dist/cli/index.d.ts",
+      "require": "./dist/cli/index.cjs",
+      "import": "./dist/cli/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "whichenv": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@clack/prompts": "^1.7.0",
+    "citty": "^0.2.2",
+    "package-manager-detector": "^1.8.0",
+    "picocolors": "^1.1.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "tsup": "^8.5.1",
+    "typescript": "5.9",
+    "vitest": "^4.1.10"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "publish": "npm publish --access public"
+  }
+}
